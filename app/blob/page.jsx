@@ -24,7 +24,9 @@ export default function Page() {
       <div className='mx-auto flex w-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5'>
         <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left'>
           <p className='w-full uppercase text-slate-400 z-10'>Coming soon..</p>
-          <h1 className='my-4 text-5xl font-bold leading-tight text-slate-200 z-10 font-SEVEN'>MOON TZU'S WISDOM</h1>
+          <h1 className='my-4 text-5xl font-bold leading-tight text-slate-200 z-10 font-SEVEN'>
+            MOON TZU&apos;S WISDOM
+          </h1>
         </div>
       </div>
 
