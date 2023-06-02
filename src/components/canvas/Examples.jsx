@@ -54,7 +54,6 @@ export const Book = ({ route = '/', ...props }) => {
   useCursor(hovered)
   const data = useScroll()
   useCursor(hovered)
-  console.log(ref)
   useFrame((state, delta) => {
     ref.current.rotation.y = data.offset * 1.5
   })

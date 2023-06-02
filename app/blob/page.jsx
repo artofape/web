@@ -2,9 +2,15 @@
 
 import { Canvas } from '@react-three/fiber'
 import { PerspectiveCamera, ScrollControls } from '@react-three/drei'
-import { DepthOfField, EffectComposer } from '@react-three/postprocessing'
+// import { DepthOfField, EffectComposer } from '@react-three/postprocessing'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
+// const EffectComposer = dynamic(() => import('@react-three/postprocessing').then((mod) => mod.EffectComposer), {
+//   ssr: false,
+// })
+// const DepthOfField = dynamic(() => import('@react-three/postprocessing').then((mod) => mod.DepthOfField), {
+//   ssr: false,
+// })
 const Book = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Book), { ssr: false })
 const Loader = (
   <div className='flex h-96 w-full flex-col items-center justify-center'>
@@ -40,9 +46,9 @@ export default function Page() {
             <PerspectiveCamera makeDefault fov={65} position={[0, 0, 8]} />
             <color attach='background' args={['black']} />
             <ambientLight intensity={0.2} />
-            <EffectComposer multisampling={0}>
+            {/* <EffectComposer multisampling={0}>
               <DepthOfField target={[0, 0, 10]} focalLength={0.2} bokehScale={14} height={700} />
-            </EffectComposer>
+            </EffectComposer> */}
           </Canvas>
         </Suspense>
       </div>
