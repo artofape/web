@@ -1,20 +1,13 @@
 'use client'
 
-import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import * as THREE from 'three'
-import { useMemo, useRef, useState } from 'react'
-import {
-  Line,
-  useCursor,
-  MeshDistortMaterial,
-  MeshReflectorMaterial,
-  MeshTransmissionMaterial,
-  useScroll,
-} from '@react-three/drei'
+import { useRef, useState } from 'react'
+import { useGLTF, useCursor, MeshDistortMaterial, MeshTransmissionMaterial, useScroll, Float } from '@react-three/drei'
 import { useRouter } from 'next/navigation'
-import { Geometry } from 'three-stdlib'
+import { useSpring, animated, a } from '@react-spring/web'
 
+const AnimatedMeshTransmissionMaterial = animated(MeshTransmissionMaterial)
+const AnimatedFloat = animated(Float)
 const config = {
   backside: true,
   backsideThickness: 5,
@@ -27,7 +20,7 @@ const config = {
   chromaticAberration: 5,
   anisotropy: 0.3,
   roughness: 0,
-  distortion: 0.1,
+  distortion: 0.2,
   distortionScale: 1,
   temporalDistortion: 0,
   ior: 1.5,
@@ -53,22 +46,38 @@ export const Blob = ({ route = '/', ...props }) => {
   )
 }
 
-export const ReflectorPlane = () => {
+export const Book = ({ route = '/', ...props }) => {
+  const ref = useRef(null)
+  const { scene } = useGLTF('/book.glb')
+  const router = useRouter()
+  const [hovered, hover] = useState(false)
+  useCursor(hovered)
+  const data = useScroll()
+  useCursor(hovered)
+  console.log(ref)
+  useFrame((state, delta) => {
+    ref.current.rotation.y = data.offset * 1.5
+  })
+  const { intensity } = useSpring({
+    intensity: hovered ? 0.01 : 0.5,
+    config: { tension: 280, friction: 120 },
+  })
   return (
-    <mesh position={[0, 0, 0]} rotation={[0, 0, 0]}>
-      <planeGeometry args={[5, 5]} />
-      <MeshReflectorMaterial
-        blur={[400, 100]}
-        resolution={1024}
-        mixBlur={1}
-        mixStrength={15}
-        depthScale={1}
-        minDepthThreshold={0.85}
-        color='#07052d'
-        metalness={0.6}
-        roughness={0.2}
+    <AnimatedFloat
+      speed={1} // Animation speed, defaults to 1
+      rotationIntensity={2} // XYZ rotation intensity, defaults to 1
+      floatIntensity={intensity} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+      floatingRange={[-5, 5]}
+    >
+      <primitive
+        ref={ref}
+        object={scene}
+        onClick={() => router.push(route)}
+        {...props}
+        onPointerOver={() => hover(true)}
+        onPointerOut={() => hover(false)}
       />
-    </mesh>
+    </AnimatedFloat>
   )
 }
 
@@ -78,14 +87,16 @@ export const Logo = ({ route = '/blob', ...props }) => {
   const data = useScroll()
 
   const [hovered, hover] = useState(false)
-
   const { nodes } = useGLTF('/sunTsu.gltf')
-  const material = <MeshTransmissionMaterial attach='material' transmission={0.8} {...config} />
 
+  const spring = useSpring({
+    color: hovered ? '#0c182b' : '#1f0e05',
+  })
+
+  // const material =
   useCursor(hovered)
-  console.log(data)
   useFrame((state, delta) => {
-    const t = state.clock.getElapsedTime()
+    // const t = state.clock.getElapsedTime()
     mesh.current.rotation.y = data.offset * 0.5
     mesh.current.position.z = data.offset * 0.5
     //Math.cos(t * 0.5) * (Math.PI / 12)
@@ -101,7 +112,15 @@ export const Logo = ({ route = '/blob', ...props }) => {
         onPointerOver={() => hover(true)}
         onPointerOut={() => hover(false)}
       >
-        {material}
+        <AnimatedMeshTransmissionMaterial attach='material' transmission={0.8} {...config} color={spring.color} />
+        {/* {hovered && (
+          <Edges
+            scale={1.001}
+            threshold={35} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
+            color='#9d6a22'
+            transition={{ duration: 0.5 }}
+          />
+        )} */}
       </mesh>
     </group>
   )
