@@ -15,8 +15,8 @@ export const Hero = () => (
       <p className='mb-8 text-2xl leading-normal text-slate-300'>The Art of Ape</p>
     </div>
     <div className='flex flex-col w-1/5 p-12 h-full items-start justify-start z-10'>
-      {Socials.map((d) => (
-        <div className='mb-4'>
+      {Socials.map((d, idx) => (
+        <div key={idx} className='mb-4'>
           <a href={d[1]}>
             <motion.img src={d[0]} width='30px' whileHover={{ opacity: 0.5 }} />
           </a>

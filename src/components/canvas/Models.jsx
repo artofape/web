@@ -39,7 +39,7 @@ export const Book = ({ route = '/', ...props }) => {
   const data = useScroll()
   useCursor(hovered)
   useFrame((state, delta) => {
-    ref.current.rotation.y = data.offset * 1.5
+    ref.current.rotation.y = data.offset * 0.8
   })
   const { intensity } = useSpring({
     intensity: hovered ? 0.01 : 0.5,
