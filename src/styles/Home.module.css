@@ -1,0 +1,136 @@
+.container {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  padding-left: 10rem;
+  padding-right: 4rem;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.content_container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.i18n {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 0.5rem;
+  height: 2rem;
+}
+
+.hero {
+  display: block;
+  width: 40%;
+  z-index: 1;
+}
+
+.main {
+  padding: 0 0 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  padding-top: 5rem;
+}
+
+.demo {
+  display: block;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 2rem 0;
+  gap: 1rem;
+}
+
+.connectors {
+  align-self: flex-start;
+  border-radius: 1em;
+}
+
+@keyframes spotlight {
+  10% {
+    background-color: #e2e3e9;
+  }
+  20% {
+    background-color: #e2e3e9;
+  }
+}
+
+.footer {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 10px;
+  max-width: calc(100% - 250px * 2);
+  width: 100%;
+}
+
+.rights {
+  position: relative;
+  justify-content: flex-start;
+  padding-right: 10px;
+  font-size: 5px;
+}
+
+.socials {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  font-size: 30px;
+}
+
+.connectors:focus {
+  animation: 2.5s ease-out 1 spotlight;
+}
+
+.widget {
+  background-color: #f7f8fa;
+  border-radius: 1rem;
+  height: 356px;
+  width: 360px;
+}
+
+.rule {
+  border: 1px solid #c3c5cb;
+  margin: 0;
+  width: calc(100% - 2rem);
+  max-width: 664px;
+}
+
+.floating-bacons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bacon {
+  position: absolute;
+  width: 50px; /* Adjust the size according to your preference */
+  pointer-events: auto;
+  transition: transform 0.5s ease-out;
+}
+
+@media (max-width: 727px) {
+  .demo {
+    flex-direction: column;
+  }
+
+  .connectors {
+    align-self: center;
+  }
+}

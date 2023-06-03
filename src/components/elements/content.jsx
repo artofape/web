@@ -3,6 +3,7 @@ import { Html, Scroll, useScroll } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useState, useEffect } from 'react'
 import { Arrow } from './icons'
+import { Swap } from './swap'
 import * as d3 from 'd3'
 
 const en_paragraph = [
@@ -34,10 +35,11 @@ const ch_paragraph = [
 export const Content = () => {
   return (
     <Scroll html>
-      <div className='w-screen right-0 mx-auto flex flex-col flex-end items-end h-screen pb-1/2 z-10'>
+      <div className='w-screen right-0 gap-20 mx-auto flex flex-col flex-end items-end h-screen pb-1/2 z-10'>
         <ReadMore />
         <Backstory />
         <Tokenomics />
+        <Swap />
       </div>
     </Scroll>
   )
