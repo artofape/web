@@ -1,13 +1,16 @@
 'use client'
 
-import { ScrollControls, PerspectiveCamera, Environment, Lightformer } from '@react-three/drei'
+import { ScrollControls, Scroll, PerspectiveCamera, Environment, Lightformer, Html } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
-
-const Logo = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Logo), {
+import { Hero } from '@/components/elements/hero'
+import { Content } from '@/components/elements/content'
+const Logo = dynamic(() => import('@/components/canvas/Models').then((mod) => mod.Logo), {
   ssr: false,
 })
+
+const Grid = dynamic(() => import('@/components/canvas/Models').then((mod) => mod.Grid), { ssr: false })
 
 const Loader = (
   <div className='flex h-96 w-full flex-col items-center justify-center'>
@@ -23,19 +26,16 @@ const Loader = (
 )
 export default function Page() {
   return (
-    <div className='mx-auto flex w-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5'>
+    <div className='mx-auto flex w-full flex-col flex-wrap items-start justify-between md:flex-col  lg:w-4/5'>
       {/* jumbo */}
-      <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left'>
-        <p className='w-full uppercase text-slate-300 z-10'>0x65fFf8e4dC2d46C4959dC5a006F089528055438D</p>
-        <h1 className='my-4 text-5xl font-bold leading-tight text-slate-100 z-10 font-SEVEN'>MOON TZU</h1>
-        <p className='mb-8 text-2xl leading-normal text-slate-300 z-10'>The Art of Ape.</p>
-      </div>
+      <Hero />
 
       <div className='absolute top-0 left-0 flex h-screen w-full flex-col items-center justify-center z-0'>
-        <Suspense fallback={Loader}>
-          <Canvas>
+        <Canvas>
+          <Suspense fallback={<Html as='div'>{Loader}</Html>}>
             <ScrollControls pages={4}>
-              <Logo route='/blob' scale={0.6} position={[0, 0, 0]} />
+              <Logo route='/wisdom' scale={0.6} position={[0, 0, 0]} />
+              <Content />
             </ScrollControls>
             <Environment files={'/dikhololo_night_1k.hdr'}>
               <group rotation={[-Math.PI / 4, -0.3, 0]}>
@@ -47,8 +47,8 @@ export default function Page() {
             <ambientLight intensity={3} />
             <pointLight position={[20, 30, 10]} intensity={0.5} />
             <PerspectiveCamera makeDefault fov={40} position={[0, 3, 5]} />
-          </Canvas>
-        </Suspense>
+          </Suspense>
+        </Canvas>
       </div>
     </div>
   )
