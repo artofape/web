@@ -54,7 +54,7 @@ const TOKEN_LIST = [
     symbol: 'MOONTZU',
     decimals: 6,
     chainId: 1,
-    logoURI: '/moontzulogo.jpg',
+    // logoURI: '/moontzulogo.jpg',
   },
 ]
 export const Swap = () => {
