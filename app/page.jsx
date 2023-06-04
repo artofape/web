@@ -33,7 +33,7 @@ export default function Page() {
       <div className='absolute top-0 left-0 flex h-screen w-full flex-col items-center justify-center z-0'>
         <Canvas>
           <Suspense fallback={<Html as='div'>{Loader}</Html>}>
-            <ScrollControls pages={4}>
+            <ScrollControls pages={3}>
               <Logo route='/wisdom' scale={0.6} position={[0, 0, 0]} />
               <Content />
             </ScrollControls>
