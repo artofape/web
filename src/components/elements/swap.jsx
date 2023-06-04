@@ -1,20 +1,23 @@
 import { SupportedLocale, SUPPORTED_LOCALES, SwapWidget, Theme, darkTheme } from '@uniswap/widgets'
 import '@uniswap/widgets/fonts.css'
-import { useRef, useState, useCallback } from 'react'
+import { useRef, useState, useCallback, useEffect } from 'react'
 import { ethers } from 'ethers'
 import jsonRpcProvider from '../web3/provider'
 const JSON_RPC_URL = 'https://mainnet.infura.io/v3/1f9d33a510e443dc8ffe3721d5affe2d'
 const theme = {
+  ...darkTheme,
   secondary: '#ececec',
   primary: '#ffffff',
-  interactive: '#1190f1',
-  container: '#071f31',
-  module: '#000000',
-  accent: '#bdbdbd',
-  outline: '#004ceec7',
-  dialog: '#FFF',
+  interactive: '#001d31',
+  container: '#000000',
+  module: '#101010',
+  accent: '#fff',
+  accentSoft: '#001d31',
+  outline: '#8b6f0aa1',
+  dialog: '#101010',
+  networkDefaultShadow: '#8b6f0aa1',
   fontFamily: 'Inter',
-  borderRadius: 1,
+  borderRadius: { large: 1, medium: 0.8, small: 0.5, xsmall: 0.5 },
 }
 
 const TOKEN_LIST = [
@@ -47,11 +50,11 @@ const TOKEN_LIST = [
   },
   {
     name: 'MOONTZU',
-    address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+    address: '0xF679c64D4727f73d806cA71a304B74a321Eb162b',
     symbol: 'MOONTZU',
     decimals: 6,
     chainId: 1,
-    logoURI: 'https://github.com/bbacondevs/web/blob/master/assets/BACONDisk.png?raw=true',
+    logoURI: '/moontzulogo.jpg',
   },
 ]
 export const Swap = () => {
@@ -79,12 +82,12 @@ export const Swap = () => {
           locale={locale}
           defaultInputTokenAddress='NATIVE'
           defaultInputAmount='1'
-          defaultOutputTokenAddress={'0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'}
-          // theme={theme}
+          defaultOutputTokenAddress={'0xF679c64D4727f73d806cA71a304B74a321Eb162b'}
+          theme={theme}
           convenienceFee={1}
-          convenienceFeeRecipient={'0x2BBc3577dec0aA8e1bd1E8F6Dd62327c903D2077'}
+          convenienceFeeRecipient={'0xF679c64D4727f73d806cA71a304B74a321Eb162b'}
           width={400}
-          theme={darkTheme}
+          // theme={darkTheme}
         />
       </div>
     </div>

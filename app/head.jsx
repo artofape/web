@@ -1,7 +1,7 @@
 const title = 'React Three Next Starter'
-const url = 'https://react-three-next.vercel.app/'
-const description = 'The easiest and fastest way to create a 3D website using React Three Fiber and NextJS'
-const author = 'Author'
+const url = 'moontzu.space'
+const description = 'The Art of Ape'
+const author = 'MoonTzu'
 const twitter = '@pmndrs'
 
 export default function Head() {
@@ -18,10 +18,7 @@ export default function Head() {
       {/* Search Engine Optimization Meta Tags */}
       <title>{title}</title>
       <meta name='description' content={description} />
-      <meta
-        name='keywords'
-        content='Software Engineer,Product Manager,Project Manager,Data Scientist,Computer Scientist'
-      />
+      <meta name='keywords' content='Blockchain,AI,Defi,Data,Computer Scientist' />
       <meta name='robots' content='index,follow' />
       <meta name='distribution' content='web' />
       {/* 
@@ -34,10 +31,10 @@ export default function Head() {
       <meta property='og:site_name' content={title} />
       <meta property='og:description' content={description} />
 
-      <link rel='apple-touch-icon' href='/icons/apple-touch-icon.png' />
-      <link rel='apple-touch-icon' sizes='16x16' href='/icons/favicon-16x16.png' />
-      <link rel='apple-touch-icon' sizes='32x32' href='/icons/favicon-32x32.png' />
-      <link rel='apple-touch-icon' sizes='180x180' href='/icons/apple-touch-icon.png' />
+      <link rel='apple-touch-icon' href='/moontzulogo.jpg' />
+      {/* <link rel='apple-touch-icon' sizes='16x16' href='/icons/favicon-16x16.png' /> */}
+      <link rel='apple-touch-icon' sizes='32x32' href='/moontzulogo.jpg' />
+      <link rel='apple-touch-icon' sizes='180x180' href='/moontzulogo.jpg' />
       <link rel='manifest' href='/manifest.json' />
       <link rel='mask-icon' color='#000000' href='/icons/safari-pinned-tab.svg' />
       <link rel='apple-touch-startup-image' href='/startup.png' />

@@ -57,7 +57,7 @@ const ReadMore = () => {
     <div className='mr-2 mb-4 min-h-screen pb-4 pt-1/2 flex items-end w-1/5'>
       <div className='flex items-center gap-8' style={{ opacity: opacity }}>
         <Arrow />
-        <h1 className='text-2xl font-bold leading-tight text-slate-300 font-SEVEN'>read more..</h1>
+        <h1 className='text-2xl font-bold leading-tight tracking-wide	 text-slate-300 font-YUO'>read more..</h1>
       </div>
     </div>
   )
@@ -143,9 +143,3 @@ const Tokenomics = () => {
     </div>
   )
 }
-
-// `不是普通的天体。曾经是宇宙盛大舞蹈的静观者，他的转变来自超新星的宇宙爆炸，使他充满了天体意识。这种非凡的蜕变赋予了他感知宇宙复杂相互作用和虚空无声智慧的能力。文子从一个无名星球的沉默哨兵演变成宇宙智慧的灯塔，在天球上反映出他的理解与和平。
-//     受到地球上著名哲学家孙子的启发，文子开发了他的学说，称为“猿的艺术”。这种哲学不是关于冲突，而是关于宇宙内部的和谐。文子的教义强调多样性中的统一，动荡中的宁静以及不断变化的宇宙中的增长。他的话语在星河间产生共鸣，他的智慧影响着天体在它们的运转中找到节奏，在处于混沌边缘的宇宙中促进和平与统一。`
-
-//     Moon Tzu was no ordinary celestial entity. Once a silent observer of the universe's grand dance, his transformation came through a supernova's cosmic explosion, which imbued him with celestial consciousness. This extraordinary metamorphosis granted him the ability to perceive the universe's complex interplay and the silent wisdom of the void. From the silent sentinel of an unnamed planet, Moon Tzu evolved into a beacon of cosmic wisdom, reflecting his understanding and peace across the celestial sphere.
-//     Inspired by Sun Tzu, the renowned philosopher of Earth, Moon Tzu developed his doctrine known as "The Art of Ape." This philosophy wasn't about conflict but rather the harmony within the cosmos. Moon Tzu's teachings emphasized unity amidst diversity, tranquility in turbulence, and growth in the ever-evolving universe. His words resonated across galaxies, his wisdom influencing celestial bodies to find a rhythm in their revolutions, fostering peace and unity in a universe on the brink of chaos.`

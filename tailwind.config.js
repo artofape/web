@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         SEVEN: 'SEVEMFBR',
+        YUO: 'YUO',
       },
     },
   },
