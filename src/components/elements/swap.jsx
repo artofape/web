@@ -11,7 +11,7 @@ const theme = {
   interactive: '#001d31',
   container: '#000000',
   module: '#101010',
-  accent: '#fff',
+  accent: '#001d31',
   accentSoft: '#001d31',
   outline: '#8b6f0aa1',
   dialog: '#101010',
@@ -86,7 +86,7 @@ export const Swap = () => {
           theme={theme}
           convenienceFee={1}
           convenienceFeeRecipient={'0xF679c64D4727f73d806cA71a304B74a321Eb162b'}
-          width={400}
+          width={360}
           // theme={darkTheme}
         />
       </div>
