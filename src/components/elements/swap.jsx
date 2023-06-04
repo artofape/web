@@ -11,7 +11,7 @@ const theme = {
   interactive: '#001d31',
   container: '#000000',
   module: '#101010',
-  accent: '#001d31',
+  accent: '#8b6f0aa1',
   accentSoft: '#001d31',
   outline: '#8b6f0aa1',
   dialog: '#101010',
