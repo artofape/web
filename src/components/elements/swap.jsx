@@ -3,7 +3,7 @@ import '@uniswap/widgets/fonts.css'
 import { useRef, useState, useCallback, useEffect } from 'react'
 import { ethers } from 'ethers'
 import jsonRpcProvider from '../web3/provider'
-const JSON_RPC_URL = 'https://mainnet.infura.io/v3/1f9d33a510e443dc8ffe3721d5affe2d'
+const JSON_RPC_URL = `https://mainnet.infura.io/v3/${process.env.INFURA_API}`
 const theme = {
   ...darkTheme,
   secondary: '#ececec',

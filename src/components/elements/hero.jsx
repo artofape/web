@@ -28,5 +28,9 @@ export const Hero = () => (
         </div>
       ))}
     </div>
+    <div className='flex absolute top-16 items-center right-24 z-10'>
+      <p className='w-full uppercase text-slate-300 '>erc-20</p>
+      <img src='/icons/ethereum.svg' width={'35px'} />
+    </div>
   </>
 )
