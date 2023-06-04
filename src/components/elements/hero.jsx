@@ -4,8 +4,8 @@ const Socials = [
   ['/icons/dextools.svg', 'https://www.dextools.io/app/en/ether/pair-explorer/'],
   ['/icons/etherscan.png', 'https://etherscan.io/token/'],
   ['/icons/twitter.png', 'https://twitter.com/moontzuerc20'],
+  ['/icons/telegram.png', 'https://t.me/Moontzuportal'],
   ['/icons/uniswap.svg', 'https://app.uniswap.org/#/swap?outputCurrency='],
-  ['/icons/telegram.svg', 'https://t.me/Moontzuportal'],
 ]
 
 export const Hero = () => (
