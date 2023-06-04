@@ -50,7 +50,7 @@ const TOKEN_LIST = [
   },
   {
     name: 'MOONTZU',
-    address: '0xF679c64D4727f73d806cA71a304B74a321Eb162b',
+    address: '0x3969900c10def45322eb1a3dbf70e8da079eb718',
     symbol: 'MOONTZU',
     decimals: 6,
     chainId: 1,
@@ -82,7 +82,7 @@ export const Swap = () => {
           locale={locale}
           defaultInputTokenAddress='NATIVE'
           defaultInputAmount='1'
-          defaultOutputTokenAddress={'0xF679c64D4727f73d806cA71a304B74a321Eb162b'}
+          defaultOutputTokenAddress={'0x3969900c10def45322eb1a3dbf70e8da079eb718'}
           theme={theme}
           convenienceFee={1}
           convenienceFeeRecipient={'0xF679c64D4727f73d806cA71a304B74a321Eb162b'}

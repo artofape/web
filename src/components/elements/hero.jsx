@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion'
 
 const Socials = [
-  ['/icons/dextools.svg', 'https://www.dextools.io/app/en/ether/pair-explorer/'],
-  ['/icons/etherscan.png', 'https://etherscan.io/token/'],
+  [
+    '/icons/dextools.svg',
+    'https://www.dextools.io/app/en/ether/pair-explorer/0xd25f4eccd9299b3b770a3d1163e2204101ae7c3d',
+  ],
+  ['/icons/etherscan.png', 'https://etherscan.io/token/0x3969900c10def45322eb1a3dbf70e8da079eb718'],
   ['/icons/twitter.png', 'https://twitter.com/moontzuerc20'],
   ['/icons/telegram.png', 'https://t.me/Moontzuportal'],
-  ['/icons/uniswap.svg', 'https://app.uniswap.org/#/swap?outputCurrency='],
+  ['/icons/uniswap.svg', 'https://app.uniswap.org/#/swap?outputCurrency=0x3969900c10def45322eb1a3dbf70e8da079eb718'],
 ]
 
 export const Hero = () => (
