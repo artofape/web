@@ -11,7 +11,7 @@ const Socials = [
 export const Hero = () => (
   <>
     <div className='flex w-full flex-col items-start justify-center p-12 md:w-4/5 md:text-left z-10'>
-      <p className='w-full uppercase text-slate-300 '>--contract address incoming--</p>
+      <p className='w-full uppercase text-slate-300 '>0x3969900c10def45322eb1a3dbf70e8da079eb718</p>
       <img src='/logo.svg' width={'400px'} className='py-10' />
       <p className='mb-8 text-2xl leading-normal text-slate-300'>The Art of Ape</p>
     </div>
